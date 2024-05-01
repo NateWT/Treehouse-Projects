@@ -3,23 +3,16 @@ Python Development Techdegree
 Project 1 - The Number Guessing Game
 --------------------------------
 """
-
-# Import the random module.
 import random
 
 attempt_count = 1
 
 high_score = 0
-# Create the start_game function.
-# Write your code inside this function.
+
 def start_game():
     
-#   When the program starts, we want to:
-#   ------------------------------------
-#   1. Display an intro/welcome message to the player.
     print("Welcome to Nathans number guessing game!")
 
-#   2. Store a random number as the answer/solution.
     answer = random.randrange(1,11)
     attempt_count = 1
     
@@ -27,7 +20,7 @@ def start_game():
 
     if high_score > 0:
         print("The current high score is {}".format(high_score))
-#   3. Continuously prompt the player for a guess.
+
     while True:
         try:
             guess = int(input("pick a number from 1-10\n"))
@@ -39,6 +32,7 @@ def start_game():
             elif guess > 10:
                 print("That number is not between 1 and 10.\n")
                 continue
+       
         except ValueError:
             print("Please enter a number.")
             continue
@@ -72,9 +66,4 @@ def start_game():
             print("Thank you for playing my game!")
             exit(0)    
                 
-
-# ( You can add more features/enhancements if you'd like to. )
-
-
-# Kick off the program by calling the start_game function.
 start_game()
